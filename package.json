@@ -97,7 +97,7 @@
 				{
 					"command": "close-tabs.closeRegexpTabs",
 					"group": "1_close@35",
-					"when": "config.closeTabs.showCloseRegexpTabs"
+					"when": "config.closeTabs.showCloseRegexpTabs && config.closeTabs.regexPatterns.length > 0"
 				}
 			]
 		},
