@@ -2,9 +2,9 @@
 	"name": "close-tabs",
 	"displayName": "Close Tabs - Unchanged, Diff, Left and more!",
 	"description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
-	"version": "1.1.5",
-	"author": "Leonardo Montini",
-	"publisher": "Balastrong",
+	"version": "1.1.6",
+	"author": "Leonardo Montini. Forked by xyzzyx99",
+	"publisher": "xyzzyx99",
 	"icon": "icon.png",
 	"repository": {
 		"type": "git",
