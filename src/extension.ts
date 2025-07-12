@@ -3,6 +3,7 @@ import { closeUnchanged } from "./commands/closeUnchanged";
 import { Change, GitExtension, Repository } from "./git";
 import { closeLeft } from "./commands/closeLeft";
 import { closeType } from "./commands/closeType";
+import { closeExtensionTabs } from "./commands/closeExtensionTabs";
 
 export function activate(context: vscode.ExtensionContext) {
   const closeUnchangedCmd = vscode.commands.registerCommand(
@@ -25,8 +26,17 @@ export function activate(context: vscode.ExtensionContext) {
     (uri: vscode.Uri) => closeType(uri, true)
   );
 
+  const closeExtensionTabsCmd = vscode.commands.registerCommand(
+    "close-tabs.closeExtensionTabs",
+    closeExtensionTabs
+  );
+
   context.subscriptions.push(closeUnchangedCmd);
   context.subscriptions.push(closeLeftCmd);
   context.subscriptions.push(closeAllOfType);
   context.subscriptions.push(closeDefaultTypes);
+  context.subscriptions.push(closeExtensionTabsCmd);
+
+  console.log("closeExtensionTabs module loaded");
+
 }
