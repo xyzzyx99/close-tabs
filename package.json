@@ -1,5 +1,5 @@
 {
-	"name": "close-tabs-revised",
+	"name": "close-tabs",
 	"displayName": "Close Tabs - Unchanged, Diff, Left and more!",
 	"description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
 	"version": "1.1.6",
@@ -61,7 +61,6 @@
 				"command": "close-tabs.closeRegexpTabs",
 				"title": "Close Tabs Matching RegExp"
 			}
-
 		],
 		"menus": {
 			"editor/title/context": [
@@ -142,8 +141,11 @@
 				},
 				"closeTabs.extensionsToClose": {
 					"type": "array",
+					"description": "List of file extensions to close with the command \"Close default types\".\nDo not include the dot(.) or quotes in the extension.\nFor example, enter pdf instead of .pdf or \"pdf\" or '.pdf'.",
 					"default": [],
-					"description": "List of file extensions to close with the command \"Close default types\""
+					"items": {
+						"type": "string"
+					}
 				},
 				"closeTabs.extensionsCaseSensitive": {
 					"type": "boolean",
