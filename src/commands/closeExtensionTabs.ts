@@ -15,9 +15,7 @@ export const closeExtensionTabs = async (
           console.log(`Skipping pinned tab: ${tab.label}`);
           return;
         }
-        const input = tab.input as any;
 
-        //      if (typeof input?.viewType === "string" && tab.label.startsWith("Extension:")) {
         if (tab.label.startsWith("Extension:")) {
           console.log(`🔒 Closing extension tab: ${tab.label}`);
           vscode.window.tabGroups.close(tab, true);
