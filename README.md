@@ -65,7 +65,7 @@ Coming soon:
 
 - Added "Close Extension Tabs" command to close tabs opened by extensions. For some reason, on VSCode the extension tab is not reused, and multiple extensions would open many extension tabs. The command closes them all.
 
-- Added "Close Tabs Matching RegExp" command to close tabs opened by extensions.
+- Added "Close Tabs Matching RegExp" command.
 
 ### 1.1.5
 
