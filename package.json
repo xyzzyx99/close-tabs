@@ -1,5 +1,5 @@
 {
-	"name": "close-tabs",
+	"name": "close-tabs-revised",
 	"displayName": "Close Tabs - Unchanged, Diff, Left and more!",
 	"description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
 	"version": "1.1.6",
@@ -56,7 +56,12 @@
 			{
 				"command": "close-tabs.closeExtensionTabs",
 				"title": "Close Extension Tabs"
+			},
+			{
+				"command": "close-tabs.closeRegexpTabs",
+				"title": "Close Tabs Matching RegExp"
 			}
+
 		],
 		"menus": {
 			"editor/title/context": [
@@ -89,6 +94,11 @@
 					"command": "close-tabs.closeExtensionTabs",
 					"group": "1_close@33",
 					"when": "config.closeTabs.showCloseExtensionTabs"
+				},
+				{
+					"command": "close-tabs.closeRegexpTabs",
+					"group": "1_close@35",
+					"when": "config.closeTabs.showCloseRegexpTabs"
 				}
 			]
 		},
@@ -139,6 +149,19 @@
 					"type": "boolean",
 					"default": false,
 					"description": "Whether the file extension matching is case sensitive"
+				},
+				"closeTabs.showCloseRegexpTabs": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show \"Close Tabs Matching Regexp\" command in the context menu"
+				},
+				"closeTabs.regexPatterns": {
+					"type": "array",
+					"description": "List of regular expressions to match tab labels for closing. Each entry should be a valid JavaScript regex string.\nDo not include slashes or quotes for Regexps. Such characters will be interpreted as part of the Regexp characters to be matched.\nFor example, enter ^abc$ instead of /^abc$/ or \"^abc$\" or '^abc$'.",
+					"default": [],
+					"items": {
+						"type": "string"
+					}
 				}
 			}
 		}
@@ -157,7 +180,6 @@
 		"@types/mocha": "^10.0.1",
 		"@types/node": "16.x",
 		"@types/sinon": "^10.0.13",
-		"@types/vscode": "^1.74.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"@vscode/test-electron": "^2.2.0",
@@ -166,7 +188,8 @@
 		"glob": "^8.0.3",
 		"mocha": "^10.1.0",
 		"sinon": "^15.0.2",
-		"typescript": "^4.9.5"
+		"typescript": "^4.9.5",
+		"vscode": "^1.1.37"
 	},
 	"__metadata": {
 		"installedTimestamp": 1752045057670,
