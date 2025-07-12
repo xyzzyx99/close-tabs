@@ -61,6 +61,10 @@ Coming soon:
 
 ## Release Notes
 
+### 1.1.6
+
+- Added "Close Extension Tabs" command to close tabs opened by extensions. For some reason, on VSCode the extension tab is not reused, and multiple extensions would open many exrension tabs. The command closes them all.
+
 ### 1.1.5
 
 - Added "Close all of Type" command in the context menu to close all tabs with the same file extension as the selected tab.
