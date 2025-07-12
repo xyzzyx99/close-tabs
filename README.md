@@ -63,7 +63,7 @@ Coming soon:
 
 ### 1.1.6
 
-- Added "Close Extension Tabs" command to close tabs opened by extensions. For some reason, on VSCode the extension tab is not reused, and multiple extensions would open many exrension tabs. The command closes them all.
+- Added "Close Extension Tabs" command to close tabs opened by extensions. For some reason, on VSCode the extension tab is not reused, and multiple extensions would open many extension tabs. The command closes them all.
 
 ### 1.1.5
 
