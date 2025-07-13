@@ -4,16 +4,15 @@ export const closeRegexpTabs = async (
   uri: vscode.Uri,
   defaultTypes: boolean
 ) => {
-  console.log("✅ closeExtensionTabs() called");
-
-  const config = vscode.workspace.getConfiguration("closeTabs");
-
-  const rawPatterns: string[] = config.get("regexPatterns") ?? [];
-
-  const regexList = rawPatterns.map(p => new RegExp(p));
 
   try {
+    //console.log("✅ closeExtensionTabs() called");
+
     const config = vscode.workspace.getConfiguration("closeTabs");
+
+    const rawPatterns: string[] = config.get("regexPatterns") ?? [];
+
+    const regexList = rawPatterns.map(p => new RegExp(p));
 
     vscode.window.tabGroups.all
       .flatMap((tabGroup) => tabGroup.tabs)
