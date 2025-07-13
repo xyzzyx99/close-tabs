@@ -6,6 +6,8 @@ More options to close open tabs, fully configurable.
 
 ## Features
 
+This is a fork from Leonardo Montini@[Repository](https://github.com/Balastrong/close-tabs.git).
+
 Add the following options to the tab context menu:
 
 - Close all open tabs without changes (from the git working tree).
@@ -60,6 +62,8 @@ Coming soon:
 - Suggest/Request your feature by opening an issue!
 
 ## Release Notes
+
+- [Fork Repository](https://github.com/xyzzyx99/close-tabs.git)
 
 ### 1.1.6
 
