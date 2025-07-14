@@ -1,7 +1,7 @@
 {
 	"name": "close-tabs",
 	"displayName": "Close Tabs - Unchanged, Diff, Left and more!",
-	"description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
+	"description": "More tabs closing options (close to the left, close unchanged, close diff tabs and more!)",
 	"version": "1.1.6",
 	"author": "Leonardo Montini. Forked by xyzzyx99",
 	"publisher": "xyzzyx99",
@@ -37,8 +37,8 @@
 				"title": "Close Unchanged"
 			},
 			{
-				"command": "git.closeAllDiffEditors",
-				"title": "Close Diff Editors"
+				"command": "close-tabs.closeDiffTabs",
+				"title": "Close Diff Tabs"
 			},
 			{
 				"command": "close-tabs.close-left",
@@ -70,9 +70,9 @@
 					"when": "config.closeTabs.showCloseUnchanged"
 				},
 				{
-					"command": "git.closeAllDiffEditors",
+					"command": "close-tabs.closeDiffTabs",
 					"group": "1_close@29",
-					"when": "config.closeTabs.showCloseDiffEditors"
+					"when": "config.closeTabs.showCloseDiffTabs"
 				},
 				{
 					"command": "close-tabs.close-left",
@@ -114,10 +114,10 @@
 					"default": true,
 					"description": "Show the \"Close Unchanged\" button."
 				},
-				"closeTabs.showCloseDiffEditors": {
+				"closeTabs.showCloseDiffTabs": {
 					"type": "boolean",
 					"default": true,
-					"description": "Show the \"Close Diff Editors\" button."
+					"description": "Show the \"Close Diff Tabs\" button."
 				},
 				"closeTabs.showCloseToTheLeft": {
 					"type": "boolean",
