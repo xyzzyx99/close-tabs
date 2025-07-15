@@ -141,7 +141,7 @@
 				},
 				"closeTabs.extensionsToClose": {
 					"type": "array",
-					"description": "List of file extensions to close with the command \"Close default types\".\nDo not include the dot(.) or quotes in the extension.\nFor example, enter pdf instead of .pdf or \"pdf\" or '.pdf'.",
+					"description": "List of file extensions to close with the command \"Close default Types\".\nDo not include the dot(.) or quotes in the extension.\nFor example, enter pdf instead of .pdf or \"pdf\" or '.pdf'.",
 					"default": [],
 					"items": {
 						"type": "string"
