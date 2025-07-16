@@ -24,11 +24,11 @@ function matchesFilePattern(input: string): boolean {
     return pattern0.test(input) || pattern1.test(input) || pattern2.test(input) || pattern3.test(input);
   */
   const patterns: RegExp[] = [
-    /^[a-fA-F0-9]+\s+-\s+.*\s+\(\d+ files\)$/,
-    /^[a-fA-F0-9]+\s+-\s+.*\s+\(1 file\)$/,
+    /^[a-fA-F0-9]+\s+-\s+.*\s+\(\d+ files?\)$/,
+    ///^[a-fA-F0-9]+\s+-\s+.*\s+\(1 file\)$/,
 
-    /^Changes\s+in\s+[a-fA-F0-9]+\s+\(1 file\)$/,
-    /^Changes\s+in\s+[a-fA-F0-9]+\s+\(\d+ files\)$/
+    ///^Changes\s+in\s+[a-fA-F0-9]+\s+\(1 file\)$/,
+    /^Changes\s+in\s+[a-fA-F0-9]+\s+\(\d+ files?\)$/
   ];
 
   return patterns.some((regex) => regex.test(input));
