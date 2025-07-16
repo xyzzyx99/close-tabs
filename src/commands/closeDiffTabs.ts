@@ -10,6 +10,30 @@ function hasMiddleSpecialUnicode(str: string, chars: string) {
   return false;
 }
 
+function matchesFilePattern(input: string): boolean {
+  // This regular expression matches:
+  // an opening parenthesis, followed by one or more digits,
+  // followed by a space, the word "files", and a closing parenthesis
+  //const pattern = /\(\d+ files\)$/;
+  /*  const pattern0 = /^[a-fA-F0-9]+\s+-\s+.*\s+\(\d+ files\)$/;
+    const pattern1 = /^[a-fA-F0-9]+\s+-\s+.*\s+\(1 file\)$/;
+  
+    const pattern2 = /^Changes\s+in\s+[a-fA-F0-9]+\s+\(1 file\)$/;
+    const pattern3 = /^Changes\s+in\s+[a-fA-F0-9]+\s+\(\d+ files\)$/;
+  
+    return pattern0.test(input) || pattern1.test(input) || pattern2.test(input) || pattern3.test(input);
+  */
+  const patterns: RegExp[] = [
+    /^[a-fA-F0-9]+\s+-\s+.*\s+\(\d+ files\)$/,
+    /^[a-fA-F0-9]+\s+-\s+.*\s+\(1 file\)$/,
+
+    /^Changes\s+in\s+[a-fA-F0-9]+\s+\(1 file\)$/,
+    /^Changes\s+in\s+[a-fA-F0-9]+\s+\(\d+ files\)$/
+  ];
+
+  return patterns.some((regex) => regex.test(input));
+}
+
 export const closeDiffTabs = async (
   uri: vscode.Uri,
   defaultTypes: boolean
@@ -33,7 +57,7 @@ export const closeDiffTabs = async (
         }
 
         const specialChars = "↔⟷";
-        const result = hasMiddleSpecialUnicode(tab.label, specialChars);
+        const result = hasMiddleSpecialUnicode(tab.label, specialChars) || matchesFilePattern(tab.label);
         console.log(result);
 
         if (result) {
